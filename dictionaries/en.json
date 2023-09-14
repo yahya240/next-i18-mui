@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About"
+  },
+  "page": {
+    "home": {
+      "title": "Welcome to NextJs i18n",
+      "description": "Internationalization in NextJs 13 App router",
+      "navbar":{
+        "home": "home",
+        "Products": "Products",
+        "Categories": "Categories",
+        "Offers": "Offers",
+        "Contact": "Contact us"
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "description": "This is the about page"
+    }
+  }
+}
