@@ -19,6 +19,20 @@ const CarouselContainer = styled(Container)`
     }
 `
 
+const PaperContainer = styled(Paper)`
+    .paper-img {
+        width: '100%';
+        height: '400px';
+        object-fit: "contain";
+    }
+
+    @media (max-width: 768px) {
+        .paper-img{
+            height: 100%;
+        }
+    }
+`
+
 export default function MainCarousel(props)
 {
     var items = [
@@ -63,8 +77,8 @@ export default function MainCarousel(props)
 function Item(props)
 {
     return (
-        <Paper>
-            <Image src={props.item.image} alt="slider-img" style={{objectFit: "contain", width: '100%', height: '400px'}}/>
-        </Paper>
+        <PaperContainer>
+            <Image src={props.item.image} alt="slider-img" className='paper-img'/>
+        </PaperContainer>
     )
 }

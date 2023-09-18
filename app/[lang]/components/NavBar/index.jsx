@@ -2,7 +2,7 @@
 import { Container, styled } from '@mui/material'
 import SearchBar from '../SearchBar'
 import CustomSelect from '../CustomSelect'
-
+import Sidebar from '../Sidebar'
 import logo from '@/public/images/logo.svg'
 import flag from '@/public/images/flag-icon.svg'
 import horizentalLine from '@/public/images/horizental-line.svg'
@@ -14,11 +14,21 @@ const CustomContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
 
+  .logo-container {
+    position: relative;
+    width: 300px;
+    height: 3rem;
+  }
+
+  .sidebar {
+    display: none; 
+  }
+
   .options-containder{
     display: flex;
     gap: 1rem;
     
-    @media (max-width: 968px) {
+    @media screen and (max-width: 968px) {
       display: none;
     }
   }
@@ -34,6 +44,25 @@ const CustomContainer = styled(Container)`
     display: flex;
     gap: 5px;
   }
+
+  @media screen and (max-width: 968px) { 
+    .sidebar {
+      display: block; 
+      margin-left: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) { 
+    .logo-container{
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 576px) { 
+    .search-bar{
+      display: none;
+    }
+  }
 `
 
 const lang = [{id:1,key:'en',value:'English'},{id:2,key:'ar',value:'Arabic'}]
@@ -43,11 +72,12 @@ export default function NavBar() {
   
   return (
     <CustomContainer>
-      <div>
-        <Image src={logo} alt='log' />
+
+      <div className='logo-container'>
+        <Image src={logo} alt='log' fill />
       </div>
 
-      <div>
+      <div className='search-bar'>
         <SearchBar />
       </div>
 
@@ -62,6 +92,11 @@ export default function NavBar() {
           <CustomSelect title='USD $' list={currency} />
         </div>
       </div>
+
+      <div className='sidebar'>
+        <Sidebar />
+      </div>
+
     </CustomContainer>
   )
 }

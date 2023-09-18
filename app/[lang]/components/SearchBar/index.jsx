@@ -35,9 +35,9 @@ const CustomAutocomplete = styled(Autocomplete)`
     }
 `
 
-export default function SearchBar() {
+export default function SearchBar({maxWidth}) {
   return (
-    <CustomStack spacing={2} sx={{ width: 300 }}>
+    <CustomStack spacing={2} sx={{ width: { sm:200, md: maxWidth || 300} }}>
       <CustomAutocomplete
         id="free-solo-demo"
         freeSolo

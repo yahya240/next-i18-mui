@@ -17,10 +17,18 @@ const ImageListContainer = styled(Container)`
   margin: 5rem 0;
 `
 
+const ImageListOverride = styled(ImageList)`
+@media only screen and (max-width: 900px) {
+  .MuiImageList-root {
+    column-count: 1 !important;
+  }
+}
+`
+
 export default function QuiltedImageList() {
   return (
     <ImageListContainer>
-      <ImageList
+      <ImageListOverride
         sx={{ width: 'fill', height: 'auto' }}
         variant="quilted"
         cols={4}
@@ -35,7 +43,7 @@ export default function QuiltedImageList() {
             />
           </ImageListItem>
         ))}
-      </ImageList>
+      </ImageListOverride>
     </ImageListContainer>
   );
 }

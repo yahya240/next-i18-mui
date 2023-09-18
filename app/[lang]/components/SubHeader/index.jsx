@@ -34,17 +34,12 @@ const SubHeaderContainer = styled(Container)`
   align-items: center;
 
   @media (max-width: 968px) {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    overflow: hidden;
+    display: none;
   }
 `
 
 const LinksContainer = styled(Container)`
-  /* display: flex;
-  gap: 2.5rem; */
+
 `
 const StyledBox = styled(Box)`
   display: flex;
